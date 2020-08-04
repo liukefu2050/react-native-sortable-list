@@ -126,7 +126,7 @@ class Row extends Component {
         duration: 300,
         easing: Easing.bounce,
         toValue: Number(nextProps.active),
-        useAnimatedDriver: false,
+        useNativeDriver: false,
       }).start();
     }
   }
