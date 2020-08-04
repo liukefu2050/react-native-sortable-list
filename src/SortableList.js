@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {ScrollView, View, StyleSheet, Platform, RefreshControl, ViewPropTypes} from 'react-native';
+import {Platform, RefreshControl, ScrollView, StyleSheet, View} from 'react-native';
 import {shallowEqual, swapArrayElements} from './utils';
 import Row from './Row';
 
@@ -14,38 +13,6 @@ function uniqueRowKey(key) {
 uniqueRowKey.id = 0
 
 export default class SortableList extends Component {
-  static propTypes = {
-    data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-    order: PropTypes.arrayOf(PropTypes.any),
-    style: ViewPropTypes.style,
-    contentContainerStyle: ViewPropTypes.style,
-    innerContainerStyle: ViewPropTypes.style,
-    sortingEnabled: PropTypes.bool,
-    scrollEnabled: PropTypes.bool,
-    horizontal: PropTypes.bool,
-    showsVerticalScrollIndicator: PropTypes.bool,
-    showsHorizontalScrollIndicator: PropTypes.bool,
-    refreshControl: PropTypes.element,
-    autoscrollAreaSize: PropTypes.number,
-    snapToAlignment: PropTypes.string,
-    rowActivationTime: PropTypes.number,
-    manuallyActivateRows: PropTypes.bool,
-    keyboardShouldPersistTaps: PropTypes.oneOf(['never', 'always', 'handled']),
-    scrollEventThrottle: PropTypes.number,
-    decelerationRate: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    pagingEnabled: PropTypes.bool,
-    nestedScrollEnabled: PropTypes.bool,
-    disableIntervalMomentum: PropTypes.bool,
-
-    renderRow: PropTypes.func.isRequired,
-    renderHeader: PropTypes.func,
-    renderFooter: PropTypes.func,
-
-    onChangeOrder: PropTypes.func,
-    onActivateRow: PropTypes.func,
-    onReleaseRow: PropTypes.func,
-    onScroll: PropTypes.func,
-  };
 
   static defaultProps = {
     sortingEnabled: true,
